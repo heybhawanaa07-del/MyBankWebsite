@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salaried Bank Account - Apex Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css/salariedaccount52.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container flex-between">
+            <div class="logo-container">
+                <a href="index.html" class="logo-text" style="text-decoration: none;">APEX <span>BANK</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="openyouraccount52.html">Back to Accounts</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="account-hero salaried-hero">
+        <div class="container">
+            <span class="badge">Corporate Perks</span>
+            <h1>Salaried Bank Account</h1>
+            <p>Designed specifically for working professionals. Enjoy zero minimum balance, complimentary insurance, and corporate overdraft facilities.</p>
+        </div>
+    </section>
+
+    <section class="container content-section">
+        <div class="grid-2">
+            <div>
+                <h2>Corporate Account Benefits</h2>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> Zero Balance Account as long as monthly salary is credited.</li>
+                    <li><i class="fa-solid fa-check"></i> Complimentary Air & Personal Accident Insurance coverage.</li>
+                    <li><i class="fa-solid fa-check"></i> Pre-approved instant personal loans with minimal processing time.</li>
+                    <li><i class="fa-solid fa-check"></i> Free demat account setup and specialized investment advisory.</li>
+                </ul>
+            </div>
+            
+            <div class="apply-box">
+                <h3>Open Salaried Account Now</h3>
+                <form id="salariedForm">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="salName" placeholder="Enter full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Corporate Company Name</label>
+                        <input type="text" id="companyName" placeholder="Your employer name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Monthly Net Salary</label>
+                        <input type="number" id="netSalary" placeholder="e.g. 75000" required>
+                    </div>
+                    <button type="submit" class="btn-salaried">Submit Corporate Details</button>
+                </form>
+                <div id="salariedMsg" class="success-msg" style="display:none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <p>&copy; 2026 Apex Horizon Bank Ltd. Corporate Salaried Division.</p>
+    </footer>
+
+    <script src="script.js/salariedaccount52.js"></script>
+</body>
+</html>

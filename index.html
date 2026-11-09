@@ -1,10 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>HomePage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Horizon Bank - Modern Banking Solutions</title>
+    
+    <!-- Link Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link CSS File inside style.css folder -->
+    <link rel="stylesheet" href="style.css/homepage.css">
+    
+    <a href="openyouraccount52.html" class="btn-primary">Open Account Instantly</a>
+
+    <a href="manage_account52.html" class="card-link">Manage Work &rarr;</a>
+
+    <a href="NRI52.html" class="segment-btn" style="text-decoration: none; display: inline-block;">🌏 NRI</a>
+
 </head>
 <body>
-   </body>
+
+    <!-- Top Bar: Segment Switching & Quick Tools -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="segment-selector">
+                <button class="segment-btn active" onclick="switchSegment(this)">👥 Personal</button>
+                <button class="segment-btn" onclick="switchSegment(this)">🌏 NRI</button>
+                <button class="segment-btn" onclick="switchSegment(this)">🏢 Business</button>
+            </div>
+            <div class="top-links flex-center">
+                <a href="#about">About Us</a>
+                <a href="#safe-banking">Safe Banking</a>
+                <a href="#help">Help & Support</a>
+                <div class="country-flag" title="India (INR)">🇮🇳 IN</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container flex-between">
+            <div class="logo-container flex-center">
+                <div class="logo-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="logo-text">APEX <span>BANK</span></div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#accounts"><i class="fa-solid fa-wallet"></i> Accounts</a>
+                <a href="#cards"><i class="fa-solid fa-credit-card"></i> Cards</a>
+                <a href="#loans"><i class="fa-solid fa-hand-holding-dollar"></i> Loans</a>
+                <a href="#investments"><i class="fa-solid fa-chart-line"></i> Investments</a>
+                <a href="#deposits"><i class="fa-solid fa-piggy-bank"></i> Deposits</a>
+            </nav>
+
+            <div class="header-actions flex-center">
+                <div class="search-box">
+                    <input type="text" placeholder="Search services...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <button class="login-btn"><i class="fa-solid fa-lock"></i> Internet Banking</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container grid-2">
+            <div class="hero-content">
+                <span class="badge">Next-Gen Digital Banking</span>
+                <h1>Smart Solutions for Your Financial Growth</h1>
+                <p>Experience seamless Online Banking, competitive interest rates on deposits, instant loans, and top-tier security for all your financial needs.</p>
+                <div class="hero-btns flex-center">
+                    <button class="btn-primary">Open Account Instantly</button>
+                    <button class="btn-secondary">Explore Loans</button>
+                </div>
+            </div>
+            <div class="quick-services-card">
+                <h3>Quick Services</h3>
+                <div class="quick-grid">
+                    <div class="quick-item">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Open Account</span>
+                    </div>
+                    <div class="quick-item">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>EMI Calculator</span>
+                    </div>
+                    <div class="quick-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Report Fraud</span>
+                    </div>
+                    <div class="quick-item">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Customer Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Banking Services Grid -->
+    <section class="services-section container">
+        <h2 class="section-title">Explore Our Banking Offerings</h2>
+        <div class="services-grid">
+            
+            <!-- 1. Open Your Account -->
+            <div class="service-card" id="accounts">
+                <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>1. Open Your Account</h3>
+                <p>Choose from zero-balance savings accounts to high-yield salaried accounts tailored for your needs.</p>
+                <ul>
+                    <li>Savings Bank Account</li>
+                    <li>Salaried Bank Account</li>
+                </ul>
+                <a href="#" class="card-link">Apply Now &rarr;</a>
+            </div>
+
+            <!-- 2. Manage Account -->
+            <div class="service-card">
+                <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+                <h3>2. Manage Account</h3>
+                <p>Track transactions, manage profile settings, request chequebooks, and control services easily.</p>
+                <ul>
+                    <li>Manage Savings Account</li>
+                    <li>Manage Salaried Account</li>
+                </ul>
+                <a href="#" class="card-link">Manage Work &rarr;</a>
+            </div>
+
+            <!-- 3. Loan -->
+            <div class="service-card" id="loans">
+                <div class="card-icon"><i class="fa-solid fa-house-chimney-crack"></i></div>
+                <h3>3. Loan Options</h3>
+                <p>Get fast approvals and competitive interest rates on all major personal and business loans.</p>
+                <ul>
+                    <li>Home & Personal Loans</li>
+                    <li>Auto & Education Loans</li>
+                </ul>
+                <a href="#" class="card-link">Calculate EMI &rarr;</a>
+            </div>
+
+            <!-- 4. Safe Banking -->
+            <div class="service-card" id="safe-banking">
+                <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <h3>4. Safe Banking</h3>
+                <p>Your security is our top priority. Stay updated on cyber safety and RBI compliance rules.</p>
+                <ul>
+                    <li>Cyber Safety Guidelines</li>
+                    <li>Govt Compliance & Security</li>
+                </ul>
+                <a href="#" class="card-link">Safety Portal &rarr;</a>
+            </div>
+
+            <!-- 5. Cards -->
+            <div class="service-card" id="cards">
+                <div class="card-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <h3>5. Cards</h3>
+                <p>Enjoy rewards, cashbacks, and international acceptance across all payment cards.</p>
+                <ul>
+                    <li>Credit & Debit Cards</li>
+                    <li>Prepaid Cards & Forex</li>
+                </ul>
+                <a href="#" class="card-link">Explore Cards &rarr;</a>
+            </div>
+
+            <!-- 6. Investment -->
+            <div class="service-card" id="investments">
+                <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3>6. Investment</h3>
+                <p>Build your financial future with curated mutual funds, stocks, and retirement plans.</p>
+                <ul>
+                    <li>Mutual Funds & Stocks</li>
+                    <li>Insurance & Pension Plans</li>
+                </ul>
+                <a href="#" class="card-link">Start Investing &rarr;</a>
+            </div>
+
+            <!-- 7. Deposits -->
+            <div class="service-card" id="deposits">
+                <div class="card-icon"><i class="fa-solid fa-vault"></i></div>
+                <h3>7. Deposits</h3>
+                <p>Maximize your savings with high-yield fixed, recurring, and tax-saver deposit schemes.</p>
+                <ul>
+                    <li>Fixed Deposits (FD)</li>
+                    <li>Recurring & Tax-Saver (RD)</li>
+                </ul>
+                <a href="#" class="card-link">Open FD/RD &rarr;</a>
+            </div>
+
+            <!-- 8. Customer Care -->
+            <div class="service-card" id="help">
+                <div class="card-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <h3>8. Customer Care</h3>
+                <p>Have questions? Reach out to our 24/7 dedicated helpline and chat assistance.</p>
+                <ul>
+                    <li>24/7 Toll-Free Help</li>
+                    <li>Raise a Ticket / Support</li>
+                </ul>
+                <a href="#" class="card-link">Contact Support &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deep Links & Comprehensive Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo-text light">APEX <span>BANK</span></div>
+                <p>Empowering financial freedom with safe, secure, and modern digital banking infrastructure.</p>
+                <div class="helpline-box">
+                    <span>Toll-Free Customer Support:</span>
+                    <strong>1800-123-4567</strong>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Personal Banking</h4>
+                <a href="#">Savings Accounts</a>
+                <a href="#">Salaried Accounts</a>
+                <a href="#">Fixed & Recurring Deposits</a>
+                <a href="#">Credit & Debit Cards</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Loans & Investments</h4>
+                <a href="#">Home Loan</a>
+                <a href="#">Personal Loan</a>
+                <a href="#">Education Loan</a>
+                <a href="#">Mutual Funds & Stocks</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources & Safety</h4>
+                <a href="#">Cyber Safety Precautions</a>
+                <a href="#">Government Guidelines</a>
+                <a href="#">Form 15G/15H</a>
+                <a href="#">Interest Rates Chart</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>About & Legal</h4>
+                <a href="#">About Apex Bank</a>
+                <a href="#">Careers</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Apex Horizon Bank Ltd. All Rights Reserved. Reference inspired by ICICI Bank guidelines.</p>
+        </div>
+    </footer>
+
+    <!-- Link JavaScript File inside script.js folder -->
+    <script src="script.js/homepage.js"></script>
+</body>
 </html>

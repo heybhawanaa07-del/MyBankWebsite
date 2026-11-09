@@ -1,0 +1,37 @@
+:root {
+    --prussian-blue: #0A2540;
+    --oxford-navy: #003366;
+    --french-blue: #1E3A8A;
+    --bg-light: #F4F6F9;
+    --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--bg-light); color: #1F2937; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+
+.main-header { background: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.logo-text { font-size: 1.5rem; font-weight: 800; color: var(--oxford-navy); }
+.logo-text span { color: var(--french-blue); }
+.nav-links a { text-decoration: none; color: #4B5563; font-weight: 600; margin-left: 15px; }
+
+.salaried-hero { background: linear-gradient(135deg, var(--prussian-blue), var(--french-blue)); color: var(--white); padding: 50px 0; text-align: center; }
+.badge { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; }
+.salaried-hero h1 { font-size: 2.3rem; margin: 10px 0; }
+
+.content-section { padding: 50px 0; }
+.feature-list { list-style: none; margin-top: 20px; }
+.feature-list li { margin-bottom: 15px; font-weight: 600; font-size: 1.05rem; }
+.feature-list i { color: #10B981; margin-right: 10px; }
+
+.apply-box { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.apply-box h3 { color: var(--oxford-navy); margin-bottom: 20px; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
+.input-group input { width: 100%; padding: 10px; border: 1px solid #D1D5DB; border-radius: 6px; outline: none; }
+.btn-salaried { width: 100%; background: var(--french-blue); color: var(--white); border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+.btn-salaried:hover { background: #162E69; }
+.success-msg { margin-top: 15px; padding: 10px; background: #D1FAE5; color: #065F46; border-radius: 6px; font-weight: 600; text-align: center; }
+.footer { background: var(--prussian-blue); color: #94A3B8; padding: 20px 0; font-size: 0.85rem; margin-top: 40px; }
+.text-center { text-align: center; }

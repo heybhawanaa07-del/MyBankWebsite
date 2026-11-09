@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRI Banking Services - Apex Bank</title>
+    
+    <!-- Link Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Linked CSS File inside style.css folder -->
+    <link rel="stylesheet" href="style.css/NRI52.css">
+</head>
+<body>
+
+    <!-- Top Segment Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="segment-selector">
+                <a href="index.html" class="segment-btn">👥 Personal</a>
+                <a href="NRI52.html" class="segment-btn active">🌏 NRI</a>
+                <a href="#" class="segment-btn">🏢 Business</a>
+            </div>
+            <div class="top-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container flex-between">
+            <div class="logo-container">
+                <a href="index.html" class="logo-text">APEX <span>BANK NRI</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="#nre-nro">NRE / NRO Accounts</a>
+                <a href="#deposits">NRI Deposits</a>
+                <a href="#remittance">Money Transfer</a>
+                <a href="#investments">Invest in India</a>
+            </nav>
+            <button class="login-btn"><i class="fa-solid fa-lock"></i> NRI Net Banking</button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="nri-hero">
+        <div class="container">
+            <span class="badge">Global Indian Banking Solutions</span>
+            <h1>Banking Services for Non-Resident Indians</h1>
+            <p>Manage your wealth back home with repatriable NRE accounts, non-repatriable NRO accounts, and seamless global remittances.</p>
+        </div>
+    </section>
+
+    <!-- NRI Accounts & Services Section -->
+    <section class="container nri-section" id="nre-nro">
+        <h2 class="section-title">Popular NRI Account Offerings</h2>
+        
+        <div class="nri-grid">
+            <!-- NRE Account Card -->
+            <div class="nri-card">
+                <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <h3>NRE Savings Account</h3>
+                <p>Fully repatriable rupee accounts for your foreign earnings. Tax-free interest earned in India.</p>
+                <ul>
+                    <li>Tax-free interest under Indian laws</li>
+                    <li>Easy repatriation of principal & interest</li>
+                    <li>Free International Debit Card</li>
+                </ul>
+                <a href="#apply-form" class="card-link" onclick="setAccountType('NRE Account')">Apply for NRE &rarr;</a>
+            </div>
+
+            <!-- NRO Account Card -->
+            <div class="nri-card">
+                <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+                <h3>NRO Savings Account</h3>
+                <p>Manage your income generated in India (rental income, dividends, pension) with ease.</p>
+                <ul>
+                    <li>Ideal for managing domestic Indian income</li>
+                    <li>Joint account facility with resident Indians</li>
+                    <li>Competitive interest rates</li>
+                </ul>
+                <a href="#apply-form" class="card-link" onclick="setAccountType('NRO Account')">Apply for NRO &rarr;</a>
+            </div>
+
+            <!-- FCNR Deposit Card -->
+            <div class="nri-card" id="deposits">
+                <div class="card-icon"><i class="fa-solid fa-vault"></i></div>
+                <h3>FCNR(B) Fixed Deposits</h3>
+                <p>Keep your deposits in foreign currencies (USD, GBP, EUR, AUD) and protect against exchange fluctuations.</p>
+                <ul>
+                    <li>Zero exchange risk on principal & interest</li>
+                    <li>Tax-free returns in foreign currency</li>
+                    <li>Flexible tenure options (1 to 5 years)</li>
+                </ul>
+                <a href="#apply-form" class="card-link" onclick="setAccountType('FCNR Deposit')">Book FCNR Deposit &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NRI Quick Application Form Section -->
+    <section class="form-section-bg" id="apply-form">
+        <div class="container form-container">
+            <div class="form-box">
+                <h2>Open Your NRI Account Today</h2>
+                <p>Fill in your details, and our dedicated NRI Relationship Manager will contact you within 24 hours.</p>
+                
+                <form id="nriForm">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user"></i> Full Name (as per Passport)</label>
+                        <input type="text" id="nriName" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-globe"></i> Country of Residence</label>
+                        <input type="text" id="nriCountry" placeholder="e.g. United States, UAE, UK, Canada" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                        <input type="email" id="nriEmail" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-phone"></i> International / Local Contact Number</label>
+                        <input type="tel" id="nriPhone" placeholder="+1 555-0199" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-file-contract"></i> Selected Product</label>
+                        <input type="text" id="selectedProduct" value="NRE Account" readonly style="background-color: #F3F4F6;">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit NRI Application &rarr;</button>
+                </form>
+                <div id="nriSuccessMsg" class="success-alert" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2026 Apex Horizon Bank Ltd. NRI Services Division. Global Banking Regulations Compliant.</p>
+        </div>
+    </footer>
+
+    <!-- Linked JavaScript File inside script.js folder -->
+    <script src="script.js/NRI52.js"></script>
+</body>
+</html>

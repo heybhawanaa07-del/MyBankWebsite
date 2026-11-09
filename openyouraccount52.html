@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Savings/Salaried Bank Account - Apex Bank</title>
+    
+    <!-- Link Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Linked CSS File inside style.css folder -->
+    <link rel="stylesheet" href="style.css/openyouraccount52.css">
+
+
+
+    <!-- Savings Card Link -->
+<a href="savingsaccount52.html" style="text-decoration: none; color: inherit;">
+    <div class="account-type-card active">
+        <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
+        <div>
+            <h3>Savings Bank Account</h3>
+            <p>Ideal for daily savings with high interest payouts and free debit cards.</p>
+        </div>
+    </div>
+</a>
+
+<!-- Salaried Card Link -->
+<a href="salariedaccount52.html" style="text-decoration: none; color: inherit;">
+    <div class="account-type-card">
+        <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+        <div>
+            <h3>Salaried Bank Account</h3>
+            <p>Designed for corporate employees with zero maintenance fees and insurance.</p>
+        </div>
+    </div>
+</a>
+
+
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container flex-between">
+            <div class="logo-container flex-center">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <div class="logo-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="logo-text">APEX <span>BANK</span></div>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#application-form">Apply Online</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="account-hero">
+        <div class="container">
+            <h1>Open Your Bank Account Online</h1>
+            <p>Experience zero paperwork, instant account activation, and high interest rates with India's most secure digital banking platform.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Grid: Account Types & Form -->
+    <section class="container main-content-grid">
+        
+        <!-- Left Column: Account Types Info -->
+        <div class="info-column">
+            <h2>Select Your Account Type</h2>
+            
+            <div class="account-type-card active" onclick="selectAccountType('Savings', this)">
+                <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
+                <div>
+                    <h3>Savings Bank Account</h3>
+                    <p>Ideal for daily savings with high interest payouts, zero-balance facility options, and free debit cards.</p>
+                </div>
+            </div>
+
+            <div class="account-type-card" onclick="selectAccountType('Salaried', this)">
+                <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                <div>
+                    <h3>Salaried Bank Account</h3>
+                    <p>Designed for corporate employees with zero maintenance fees, complimentary insurance, and overdraft protection.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Digital Application Form -->
+        <div class="form-column" id="application-form">
+            <div class="form-card">
+                <h2>Instant Account Opening Form</h2>
+                <p class="form-sub">Fill in your details below to get started instantly.</p>
+                
+                <form id="accountForm">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user"></i> Full Name (as per Aadhaar/PAN)</label>
+                        <input type="text" id="fullName" placeholder="Enter your full legal name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-phone"></i> Mobile Number (Linked to Aadhaar)</label>
+                        <input type="tel" id="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-id-card"></i> PAN Number</label>
+                        <input type="text" id="pan" placeholder="ABCDE1234F" style="text-transform: uppercase;" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Proceed with Video KYC &rarr;</button>
+                </form>
+                <div id="successMessage" class="hidden-msg"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Apex Horizon Bank Ltd. All Rights Reserved. Secure 256-bit SSL Encrypted Form.</p>
+        </div>
+    </footer>
+
+    <!-- Linked JavaScript File inside script.js folder -->
+    <script src="script.js/openyouraccount52.js"></script>
+</body>
+</html>

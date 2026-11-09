@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage My Account - Apex Bank</title>
+    
+    <!-- Link Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Linked CSS File inside style.css folder -->
+    <link rel="stylesheet" href="style.css/manage_account52.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container flex-between">
+            <div class="logo-container">
+                <a href="index.html" class="logo-text">APEX <span>BANK</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="openyouraccount52.html">Open Account</a>
+                <a href="#services">Account Services</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="manage-hero">
+        <div class="container">
+            <h1>Manage Your Bank Account</h1>
+            <p>Update profile details, request cheque books, download statements, and manage your Savings or Salaried accounts seamlessly.</p>
+        </div>
+    </section>
+
+    <!-- Main Account Management Layout -->
+    <section class="container manage-section" id="services">
+        <div class="manage-grid">
+            
+            <!-- Service 1: Statement Download -->
+            <div class="manage-card">
+                <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3>Download Account Statement</h3>
+                <p>Select your date range and download official PDF or CSV e-statements for your account.</p>
+                <form class="manage-form" onsubmit="handleStatementRequest(event)">
+                    <div class="input-group">
+                        <label>Account Type</label>
+                        <select id="statementAccType" required>
+                            <option value="Savings Account">Savings Account</option>
+                            <option value="Salaried Account">Salaried Account</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Duration</label>
+                        <select id="statementDuration">
+                            <option value="Last 1 Month">Last 1 Month</option>
+                            <option value="Last 6 Months">Last 6 Months</option>
+                            <option value="Financial Year 2025-26">Financial Year 2025-26</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-manage">Download Statement</button>
+                </form>
+            </div>
+
+            <!-- Service 2: Request Cheque Book / Debit Card -->
+            <div class="manage-card">
+                <div class="card-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                <h3>Cheque Book & Card Services</h3>
+                <p>Request a new physical cheque book or issue a replacement debit card to your registered address.</p>
+                <form class="manage-form" onsubmit="handleServiceRequest(event)">
+                    <div class="input-group">
+                        <label>Service Requested</label>
+                        <select id="serviceType" required>
+                            <option value="New Cheque Book (20 Leaves)">New Cheque Book (20 Leaves)</option>
+                            <option value="New Debit Card Replacement">New Debit Card Replacement</option>
+                            <option value="Update ATM PIN">Update ATM PIN</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Registered Account Number</label>
+                        <input type="text" id="accNumber" placeholder="e.g. 123456789012" pattern="[0-9]{12}" required>
+                    </div>
+                    <button type="submit" class="btn-manage">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Service 3: Profile & Contact Update -->
+            <div class="manage-card">
+                <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                <h3>Update Profile Details</h3>
+                <p>Keep your contact details updated to receive instant transaction alerts and security warnings.</p>
+                <form class="manage-form" onsubmit="handleProfileUpdate(event)">
+                    <div class="input-group">
+                        <label>New Mobile Number</label>
+                        <input type="tel" id="updatePhone" placeholder="Enter 10-digit phone" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="input-group">
+                        <label>New Email Address</label>
+                        <input type="email" id="updateEmail" placeholder="name@example.com" required>
+                    </div>
+                    <button type="submit" class="btn-manage">Update Info</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Dynamic Feedback Output Alert Box -->
+        <div id="manageNotification" class="notification-box" style="display: none;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2026 Apex Horizon Bank Ltd. Account Self-Service Portal.</p>
+        </div>
+    </footer>
+
+    <!-- Linked JavaScript File inside script.js folder -->
+    <script src="script.js/manage_account52.js"></script>
+</body>
+</html>
