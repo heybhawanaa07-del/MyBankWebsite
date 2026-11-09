@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFB - Unified Finance Bank | Investment Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        ufb: {
+                            navy: '#0A2040',
+                            blue: '#1E88E5',
+                            cyan: '#00B4D8',
+                            light: '#F4F7FB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom range slider styling */
+        input[type=range]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #1E88E5;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6px;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-ufb-light font-sans text-slate-800 antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-ufb-cyan to-ufb-navy rounded-xl flex items-center justify-center text-white font-bold shadow-md">
+                    <i class="fa-solid fa-leaf text-sm"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-ufb-navy">UFB</span>
+                    <span class="block text-[9px] uppercase tracking-wider text-slate-500 -mt-1">Unified Finance Bank</span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
+                <a href="#" class="hover:text-ufb-blue transition">Deposits</a>
+                <a href="#" class="text-ufb-blue font-bold border-b-2 border-ufb-blue pb-0.5">Investments</a>
+                <a href="#" class="hover:text-ufb-blue transition">Loans</a>
+                <a href="#" class="hover:text-ufb-blue transition">About Us</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="openModal('Wealth Portfolio')" class="px-4 py-2 bg-ufb-blue hover:bg-blue-600 text-white text-xs font-semibold rounded-lg shadow transition">
+                    Start Investing
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-br from-ufb-navy via-slate-900 to-ufb-blue text-white py-14 px-4 text-center relative overflow-hidden">
+        <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+            <span class="inline-block bg-white/10 text-ufb-cyan text-xs font-semibold px-3 py-1 rounded-full border border-white/10">
+                <i class="fa-solid fa-chart-line mr-1"></i> Smart Wealth Management Solutions
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Secure, Save & Succeed</h1>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+                Build your long-term wealth with UFB’s curated Mutual Funds, Stock Trading, and Tax-Saving Sovereign Bonds with zero hassle.
+            </p>
+            <div class="pt-2">
+                <button onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})" class="px-6 py-2.5 bg-ufb-cyan hover:bg-cyan-500 text-ufb-navy font-bold text-xs rounded-xl shadow-lg transition">
+                    Calculate Returns <i class="fa-solid fa-calculator ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+
+        <!-- INTERACTIVE SIP & INVESTMENT CALCULATOR -->
+        <section id="calculator" class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-8">
+            <div class="text-center max-w-lg mx-auto mb-8">
+                <h2 class="text-2xl font-bold text-ufb-navy">Investment Return Calculator</h2>
+                <p class="text-slate-500 text-xs mt-1">Estimate your potential returns with Systematic Investment Plans (SIP).</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Inputs Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Monthly Investment Amount Slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-slate-700">
+                            <label>Monthly Investment</label>
+                            <span id="amountDisplay" class="text-ufb-blue font-bold">$500</span>
+                        </div>
+                        <input type="range" id="amountRange" min="50" max="5000" step="50" value="500" class="w-full cursor-pointer">
+                    </div>
+
+                    <!-- Expected Return Rate Slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-slate-700">
+                            <label>Expected Annual Return Rate</label>
+                            <span id="rateDisplay" class="text-ufb-blue font-bold">12%</span>
+                        </div>
+                        <input type="range" id="rateRange" min="5" max="20" step="0.5" value="12" class="w-full cursor-pointer">
+                    </div>
+
+                    <!-- Tenure Slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-slate-700">
+                            <label>Investment Horizon (Years)</label>
+                            <span id="tenureDisplay" class="text-ufb-blue font-bold">5 Years</span>
+                        </div>
+                        <input type="range" id="tenureRange" min="1" max="20" step="1" value="5" class="w-full cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Result Box Column -->
+                <div class="lg:col-span-5 bg-ufb-navy text-white p-6 rounded-2xl space-y-4 shadow-lg">
+                    <div class="text-center pb-3 border-b border-slate-700">
+                        <span class="text-xs uppercase tracking-wider text-slate-400">Total Projected Wealth</span>
+                        <div id="resTotalWealth" class="text-3xl font-extrabold text-ufb-cyan mt-1">$41,243</div>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Total Amount Invested:</span>
+                            <span id="resInvested" class="font-bold text-white">$30,000</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span>Estimated Capital Gains:</span>
+                            <span id="resGains" class="font-bold text-ufb-cyan">$11,243</span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('SIP Mutual Funds')" class="w-full py-3 bg-ufb-blue hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow transition">
+                        Start SIP Today <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTMENT PRODUCTS GRID -->
+        <section class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-ufb-navy">Popular Investment Solutions</h2>
+                <p class="text-slate-500 text-xs mt-1">Diversify your capital across low-risk and high-growth asset classes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Mutual Funds -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-blue-50 text-ufb-blue rounded-xl flex items-center justify-center font-bold text-lg mb-4">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ufb-navy mb-2">Mutual Funds</h3>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Invest in expert-managed portfolios across Equity, Debt, and Hybrid funds with low initial minimums.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Mutual Funds')" class="w-full py-2 bg-slate-100 hover:bg-ufb-navy hover:text-white text-ufb-navy font-bold text-xs rounded-xl transition">
+                        Explore Funds
+                    </button>
+                </div>
+
+                <!-- Card 2: 3-in-1 Demat & Trading -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-cyan-50 text-ufb-cyan rounded-xl flex items-center justify-center font-bold text-lg mb-4">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ufb-navy mb-2">Stocks & Demat</h3>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Seamless 3-in-1 integrated Banking, Savings & Trading account with zero brokerage on equity delivery.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Demat Account')" class="w-full py-2 bg-slate-100 hover:bg-ufb-navy hover:text-white text-ufb-navy font-bold text-xs rounded-xl transition">
+                        Open Demat Account
+                    </button>
+                </div>
+
+                <!-- Card 3: Sovereign Gold & Government Bonds -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-blue-50 text-ufb-blue rounded-xl flex items-center justify-center font-bold text-lg mb-4">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ufb-navy mb-2">Gold & Govt Bonds</h3>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Secure risk-free government backings with fixed interest yields and tax exemptions on capital gains.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Government Bonds')" class="w-full py-2 bg-slate-100 hover:bg-ufb-navy hover:text-white text-ufb-navy font-bold text-xs rounded-xl transition">
+                        Invest in Bonds
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE UFB INVESTMENTS -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl font-bold text-ufb-navy text-center">Why Invest through UFB?</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+                <div class="p-4 bg-ufb-light rounded-xl space-y-2">
+                    <i class="fa-solid fa-shield-halved text-ufb-blue text-lg"></i>
+                    <h4 class="font-bold text-ufb-navy text-sm">100% Encrypted & Safe</h4>
+                    <p class="text-slate-600">Bank-grade multi-factor security protecting your investments 24/7.</p>
+                </div>
+
+                <div class="p-4 bg-ufb-light rounded-xl space-y-2">
+                    <i class="fa-solid fa-percent text-ufb-cyan text-lg"></i>
+                    <h4 class="font-bold text-ufb-navy text-sm">Zero Paperwork</h4>
+                    <p class="text-slate-600">Instant digital onboarding and video KYC verification in minutes.</p>
+                </div>
+
+                <div class="p-4 bg-ufb-light rounded-xl space-y-2">
+                    <i class="fa-solid fa-headset text-ufb-blue text-lg"></i>
+                    <h4 class="font-bold text-ufb-navy text-sm">Dedicated Advisors</h4>
+                    <p class="text-slate-600">Get personalized financial advisory recommendations for your goal profile.</p>
+                </div>
+
+                <div class="p-4 bg-ufb-light rounded-xl space-y-2">
+                    <i class="fa-solid fa-bolt text-ufb-cyan text-lg"></i>
+                    <h4 class="font-bold text-ufb-navy text-sm">Automated SIPs</h4>
+                    <p class="text-slate-600">Set auto-debits easily and modify or pause investments at any time.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ufb-navy text-slate-400 py-6 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 Unified Finance Bank (UFB). All investments are subject to market risks.</p>
+    </footer>
+
+    <!-- POPUP MODAL FOR INVESTMENT APPLICATION -->
+    <div id="applyModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="modalTitle" class="text-lg font-bold text-ufb-navy mb-4">Start Investing</h3>
+            
+            <form onsubmit="handleFormSubmit(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Full Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Email Address</label>
+                    <input type="email" required placeholder="john@example.com" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Monthly SIP Amount ($)</label>
+                    <input type="number" id="modalAmount" required value="500" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue font-bold">
+                </div>
+                <button type="submit" class="w-full py-3 bg-ufb-blue hover:bg-blue-600 text-white font-bold rounded-xl mt-2 shadow transition">
+                    Confirm & Start Portfolio
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DOM Elements for SIP Calculator
+        const amountRange = document.getElementById('amountRange');
+        const amountDisplay = document.getElementById('amountDisplay');
+        const rateRange = document.getElementById('rateRange');
+        const rateDisplay = document.getElementById('rateDisplay');
+        const tenureRange = document.getElementById('tenureRange');
+        const tenureDisplay = document.getElementById('tenureDisplay');
+        
+        const resInvested = document.getElementById('resInvested');
+        const resGains = document.getElementById('resGains');
+        const resTotalWealth = document.getElementById('resTotalWealth');
+        const modalAmount = document.getElementById('modalAmount');
+
+        // Format Currency Helper
+        const formatUSD = (val) => '$' + Math.round(val).toLocaleString();
+
+        // SIP Calculation Formula: M = P * ({[1 + i]^n - 1} / i) * (1 + i)
+        function calculateSIP() {
+            const P = parseFloat(amountRange.value); // Monthly installment
+            const annualRate = parseFloat(rateRange.value); // Annual interest rate in %
+            const years = parseFloat(tenureRange.value); // Number of years
+
+            amountDisplay.textContent = formatUSD(P);
+            rateDisplay.textContent = annualRate + '%';
+            tenureDisplay.textContent = years + (years === 1 ? ' Year' : ' Years');
+            modalAmount.value = P;
+
+            const i = (annualRate / 12) / 100; // Monthly interest rate
+            const n = years * 12; // Total months
+
+            const totalInvested = P * n;
+            const totalWealth = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+            const gains = totalWealth - totalInvested;
+
+            resInvested.textContent = formatUSD(totalInvested);
+            resGains.textContent = formatUSD(gains);
+            resTotalWealth.textContent = formatUSD(totalWealth);
+        }
+
+        // Event Listeners for Sliders
+        amountRange.addEventListener('input', calculateSIP);
+        rateRange.addEventListener('input', calculateSIP);
+        tenureRange.addEventListener('input', calculateSIP);
+
+        // Modal Controls
+        function openModal(productName) {
+            document.getElementById('modalTitle').textContent = 'Invest in ' + productName;
+            document.getElementById('applyModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('applyModal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Congratulations! Your investment request for UFB Wealth Services has been placed.');
+            closeModal();
+        }
+
+        // Initial Calculation on Load
+        window.onload = calculateSIP;
+    </script>
+</body>
+</html>

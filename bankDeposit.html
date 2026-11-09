@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFB - Unified Finance Bank | Deposit Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        ufb: {
+                            navy: '#0A2040',
+                            blue: '#1E88E5',
+                            cyan: '#00B4D8',
+                            light: '#F4F7FB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom range slider thumb styling */
+        input[type=range]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #1E88E5;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6px;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-ufb-light font-sans text-slate-800 antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-ufb-cyan to-ufb-navy rounded-xl flex items-center justify-center text-white font-bold shadow-md">
+                    <i class="fa-solid fa-leaf text-sm"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-ufb-navy">UFB</span>
+                    <span class="block text-[9px] uppercase tracking-wider text-slate-500 -mt-1">Unified Finance Bank</span>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="openModal('Fixed Deposit')" class="px-4 py-2 bg-ufb-blue hover:bg-blue-600 text-white text-xs font-semibold rounded-lg shadow transition">
+                    Open Deposit
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-br from-ufb-navy via-slate-900 to-ufb-blue text-white py-12 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="inline-block bg-white/10 text-ufb-cyan text-xs font-semibold px-3 py-1 rounded-full border border-white/10">
+                <i class="fa-solid fa-shield-halved mr-1"></i> DICGC Insured up to $500,000
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Deposit, Save & Grow with UFB</h1>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto">
+                Secure your future with guaranteed interest rates up to <strong class="text-white font-bold">7.85% p.a.</strong> and 100% digital account opening.
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+
+        <!-- INTERACTIVE CALCULATOR SECTION -->
+        <section id="calculator" class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-8">
+            <div class="text-center max-w-lg mx-auto mb-8">
+                <h2 class="text-2xl font-bold text-ufb-navy">Fixed Deposit Calculator</h2>
+                <p class="text-slate-500 text-xs mt-1">Adjust amount and tenure to calculate your maturity returns instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Inputs Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Deposit Amount Slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-slate-700">
+                            <label>Deposit Amount</label>
+                            <span id="amountDisplay" class="text-ufb-blue font-bold">$10,000</span>
+                        </div>
+                        <input type="range" id="amountRange" min="1000" max="100000" step="1000" value="10000" class="w-full cursor-pointer">
+                    </div>
+
+                    <!-- Tenure Slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-slate-700">
+                            <label>Tenure (Years)</label>
+                            <span id="tenureDisplay" class="text-ufb-blue font-bold">3 Years</span>
+                        </div>
+                        <input type="range" id="tenureRange" min="1" max="10" step="1" value="3" class="w-full cursor-pointer">
+                    </div>
+
+                    <div class="p-3 bg-blue-50 rounded-xl border border-blue-100 flex justify-between items-center text-xs text-blue-900">
+                        <span>Applicable Compounding Rate:</span>
+                        <strong class="text-sm font-bold">7.25% p.a.</strong>
+                    </div>
+                </div>
+
+                <!-- Result Box Column -->
+                <div class="lg:col-span-5 bg-ufb-navy text-white p-6 rounded-2xl space-y-4 shadow-lg">
+                    <div class="text-center pb-3 border-b border-slate-700">
+                        <span class="text-xs uppercase tracking-wider text-slate-400">Total Maturity Value</span>
+                        <div id="resMaturity" class="text-3xl font-extrabold text-ufb-cyan mt-1">$12,350</div>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Principal Invested:</span>
+                            <span id="resPrincipal" class="font-bold text-white">$10,000</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span>Interest Earned:</span>
+                            <span id="resInterest" class="font-bold text-ufb-cyan">$2,350</span>
+                        </div>
+                    </div>
+                    <button onclick="openModal('Fixed Deposit')" class="w-full py-3 bg-ufb-blue hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow transition">
+                        Invest Now <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOSIT TYPES CARDS SECTION -->
+        <section class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-ufb-navy">Our Deposit Products</h2>
+                <p class="text-slate-500 text-xs mt-1">Choose the right scheme tailored to your savings goals.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-blue-50 text-ufb-blue rounded-xl flex items-center justify-center font-bold text-lg mb-4">
+                            <i class="fa-solid fa-vault"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ufb-navy mb-2">Fixed Deposit (FD)</h3>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Lock in high returns with guaranteed payouts. Flexible tenures from 7 days to 10 years with loan facility up to 90%.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Fixed Deposit')" class="w-full py-2 bg-slate-100 hover:bg-ufb-navy hover:text-white text-ufb-navy font-bold text-xs rounded-xl transition">
+                        Open FD Account
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 bg-cyan-50 text-ufb-cyan rounded-xl flex items-center justify-center font-bold text-lg mb-4">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-ufb-navy mb-2">Recurring Deposit (RD)</h3>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Save systematically with small monthly installments starting from $50/month and earn competitive compounding rates.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Recurring Deposit')" class="w-full py-2 bg-slate-100 hover:bg-ufb-navy hover:text-white text-ufb-navy font-bold text-xs rounded-xl transition">
+                        Start RD Plan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ufb-navy text-slate-400 py-6 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 Unified Finance Bank (UFB). All rights reserved.</p>
+    </footer>
+
+    <!-- POPUP MODAL FOR DEPOSIT APPLICATION -->
+    <div id="applyModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="modalTitle" class="text-lg font-bold text-ufb-navy mb-4">Open Deposit Account</h3>
+            
+            <form onsubmit="handleFormSubmit(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Full Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Mobile Number</label>
+                    <input type="tel" required placeholder="+1 555-0199" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Initial Amount ($)</label>
+                    <input type="number" id="modalAmount" required value="10000" class="w-full p-2.5 rounded-lg border border-slate-300 outline-none focus:border-ufb-blue font-bold">
+                </div>
+                <button type="submit" class="w-full py-3 bg-ufb-blue hover:bg-blue-600 text-white font-bold rounded-xl mt-2 shadow transition">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DOM Elements for Calculator
+        const amountRange = document.getElementById('amountRange');
+        const amountDisplay = document.getElementById('amountDisplay');
+        const tenureRange = document.getElementById('tenureRange');
+        const tenureDisplay = document.getElementById('tenureDisplay');
+        const resPrincipal = document.getElementById('resPrincipal');
+        const resInterest = document.getElementById('resInterest');
+        const resMaturity = document.getElementById('resMaturity');
+        const modalAmount = document.getElementById('modalAmount');
+
+        // Format Currency Helper
+        const formatUSD = (val) => '$' + Math.round(val).toLocaleString();
+
+        // Calculate FD Returns using Compound Interest Formula
+        function calculate() {
+            const P = parseFloat(amountRange.value);
+            const t = parseFloat(tenureRange.value);
+            const r = 0.0725; // 7.25% annual interest
+            const n = 4; // Quarterly compounding
+
+            amountDisplay.textContent = formatUSD(P);
+            tenureDisplay.textContent = t + (t === 1 ? ' Year' : ' Years');
+            modalAmount.value = P;
+
+            // A = P(1 + r/n)^(nt)
+            const A = P * Math.pow((1 + r / n), (n * t));
+            const interest = A - P;
+
+            resPrincipal.textContent = formatUSD(P);
+            resInterest.textContent = formatUSD(interest);
+            resMaturity.textContent = formatUSD(A);
+        }
+
+        // Event Listeners for Sliders
+        amountRange.addEventListener('input', calculate);
+        tenureRange.addEventListener('input', calculate);
+
+        // Modal Controls
+        function openModal(planName) {
+            document.getElementById('modalTitle').textContent = 'Open ' + planName;
+            document.getElementById('applyModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('applyModal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Success! Your deposit application has been securely submitted.');
+            closeModal();
+        }
+
+        // Initial Calculation on Load
+        window.onload = calculate;
+    </script>
+</body>
+</html>
