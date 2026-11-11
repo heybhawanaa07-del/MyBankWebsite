@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan - Apex Bank</title>
+    <link rel="stylesheet" href="style.css/loans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="loans.html" class="logo">
+                <i class="fa-solid fa-building-columns"></i>Apex<span>Bank</span> | Loans
+            </a>
+            <ul class="nav-links">
+                <li><a href="loans.html">All Loans</a></li>
+                <li><a href="homeloan.html" class="active">Home Loan</a></li>
+                <li><a href="educationloan.html">Education Loan</a></li>
+                <li><a href="autoloan.html">Auto Loan</a></li>
+                <li><a href="businessloan.html">Business Loan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Simple Top Back-Link -->
+    <div class="back-link">
+        <div class="container">
+            <a href="loans.html"><i class="fa-solid fa-arrow-left"></i> Back to Main Loans Page</a>
+        </div>
+    </div>
+
+    <header class="detail-hero">
+        <div class="container">
+            <span class="hero-tag">House & Flat Loans</span>
+            <h1>Dream Home Loan</h1>
+            <p>Easy home loans up to 30 years with low interest rates starting at 8.4% per year.</p>
+            <button class="apply-btn inline-btn" onclick="openModal('Dream Home Loan')">Apply For Home Loan</button>
+        </div>
+    </header>
+
+    <section class="container detail-content">
+        <div class="detail-grid">
+            <div class="info-box">
+                <h2>Buy or Build Your Home Easily</h2>
+                <p>We help you buy a flat, plot, or build your own house without complex bank rules. Get simple step-by-step guidance from our team.</p>
+                
+                <h3 class="section-subtitle">What You Get</h3>
+                <ul class="detail-list">
+                    <li><strong>Low Rates:</strong> Interest starting from just 8.4% per year.</li>
+                    <li><strong>High Loan Amount:</strong> Get up to ₹5 Crore funded.</li>
+                    <li><strong>Long Duration:</strong> Pay back comfortably in up to 30 years.</li>
+                    <li><strong>No Hidden Charges:</strong> Pay off your loan early without extra fees.</li>
+                </ul>
+            </div>
+
+            <div class="info-box sidebar-box">
+                <h3>Who Can Apply?</h3>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Salaried person or Business owner</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Age between 21 and 65 years</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Minimum monthly salary/income: ₹30,000</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Good credit history score</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-house"></i>
+                <h3 id="modalLoanTitle">Apply for Home Loan</h3>
+                <p>Enter your contact number to get a call back.</p>
+            </div>
+            
+            <form id="loanForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Your Name</label>
+                    <input type="text" id="fullName" placeholder="Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="rahul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="submit-btn">Get Call Back</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Apex Bank. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js/loans.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Loan - Apex Bank</title>
+    <link rel="stylesheet" href="style.css/loans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="loans.html" class="logo">
+                <i class="fa-solid fa-building-columns"></i>Apex<span>Bank</span> | Loans
+            </a>
+            <ul class="nav-links">
+                <li><a href="loans.html">All Loans</a></li>
+                <li><a href="homeloan.html">Home Loan</a></li>
+                <li><a href="educationloan.html" class="active">Education Loan</a></li>
+                <li><a href="autoloan.html">Auto Loan</a></li>
+                <li><a href="businessloan.html">Business Loan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="back-link">
+        <div class="container">
+            <a href="loans.html"><i class="fa-solid fa-arrow-left"></i> Back to Main Loans Page</a>
+        </div>
+    </div>
+
+    <header class="detail-hero education-bg">
+        <div class="container">
+            <span class="hero-tag">Studies & College</span>
+            <h1>Student Education Loan</h1>
+            <p>Pay for college in India or abroad with rates starting from 7.9% per year.</p>
+            <button class="apply-btn inline-btn" onclick="openModal('Student Education Loan')">Apply For Student Loan</button>
+        </div>
+    </header>
+
+    <section class="container detail-content">
+        <div class="detail-grid">
+            <div class="info-box">
+                <h2>Focus on Studies, Not College Fees</h2>
+                <p>Our student loan covers tuition fees, laptop costs, hostel charges, and travel expenses. Start paying back after you finish your course!</p>
+                
+                <h3 class="section-subtitle">What You Get</h3>
+                <ul class="detail-list">
+                    <li><strong>No Security Needed:</strong> Up to ₹40 Lakhs loan without collateral.</li>
+                    <li><strong>Study Holiday:</strong> No monthly payment required during your course years + 6 months after.</li>
+                    <li><strong>Tax Benefit:</strong> Save money on income tax under Section 80E.</li>
+                </ul>
+            </div>
+
+            <div class="info-box sidebar-box">
+                <h3>Documents Needed</h3>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check"></i> College admission letter</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Parent/Guardian as co-applicant</li>
+                    <li><i class="fa-solid fa-circle-check"></i> School/College marksheets</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3 id="modalLoanTitle">Apply for Education Loan</h3>
+                <p>Send details to talk to our student loan helper.</p>
+            </div>
+            
+            <form id="loanForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Student Name</label>
+                    <input type="text" id="fullName" placeholder="Priya Patel" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="priya@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="submit-btn">Send Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Apex Bank. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js/loans.js"></script>
+</body>
+</html>

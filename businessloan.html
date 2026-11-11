@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Loan - Apex Bank</title>
+    <link rel="stylesheet" href="style.css/loans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="loans.html" class="logo">
+                <i class="fa-solid fa-building-columns"></i>Apex<span>Bank</span> | Loans
+            </a>
+            <ul class="nav-links">
+                <li><a href="loans.html">All Loans</a></li>
+                <li><a href="homeloan.html">Home Loan</a></li>
+                <li><a href="educationloan.html">Education Loan</a></li>
+                <li><a href="autoloan.html">Auto Loan</a></li>
+                <li><a href="businessloan.html" class="active">Business Loan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="back-link">
+        <div class="container">
+            <a href="loans.html"><i class="fa-solid fa-arrow-left"></i> Back to Main Loans Page</a>
+        </div>
+    </div>
+
+    <header class="detail-hero business-bg">
+        <div class="container">
+            <span class="hero-tag">Shops & Business</span>
+            <h1>Small Business Loan</h1>
+            <p>Grow your business with quick money up to ₹1 Crore.</p>
+            <button class="apply-btn inline-btn" onclick="openModal('Small Business Loan')">Apply For Business Loan</button>
+        </div>
+    </header>
+
+    <section class="container detail-content">
+        <div class="detail-grid">
+            <div class="info-box">
+                <h2>Grow Your Business Faster</h2>
+                <p>Designed for shopkeepers, small companies, and self-employed people to buy stock, new machines, or expand store locations.</p>
+                <ul class="detail-list">
+                    <li><strong>High Money Limit:</strong> Get business loans up to ₹1 Crore with easy paperwork.</li>
+                    <li><strong>Flexible Credit:</strong> Take money as per need and pay interest only on what you use.</li>
+                    <li><strong>Fast Disbursal:</strong> Money reaches your bank in 48 hours after approval.</li>
+                </ul>
+            </div>
+
+            <div class="info-box sidebar-box">
+                <h3>Who Can Get This?</h3>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Business running for 2 years or more</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Business GST or Bank Statement</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Good monthly sales record</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3 id="modalLoanTitle">Apply for Business Loan</h3>
+                <p>Leave details to talk with our business loan team.</p>
+            </div>
+            
+            <form id="loanForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Business Owner Name</label>
+                    <input type="text" id="fullName" placeholder="Amit Verma" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" placeholder="amit@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Apex Bank. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js/loans.js"></script>
+</body>
+</html>

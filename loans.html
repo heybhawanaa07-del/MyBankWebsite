@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank - Loans Section</title>
+    
+    <!-- Link to CSS inside style.css folder -->
+    <link rel="stylesheet" href="style.css/loans.css">
+    
+    <!-- FontAwesome Icons for clean visuals -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!-- Header navigation focused strictly on Loans section -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="loans.html" class="logo">
+                <i class="fa-solid fa-building-columns"></i>Apex<span>Bank</span> | Loans
+            </a>
+            <ul class="nav-links">
+                <li><a href="loans.html" class="active">All Loans</a></li>
+                <li><a href="homeloan.html">Home Loan</a></li>
+                <li><a href="educationloan.html">Education Loan</a></li>
+                <li><a href="autoloan.html">Auto Loan</a></li>
+                <li><a href="businessloan.html">Business Loan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO BANNER ==================== -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Loans Made Simple</span>
+            <h1>Simple Loans for Your Big Dreams</h1>
+            <p>Compare simple interest rates, check your monthly payment in Rupees, and choose the right loan for your needs.</p>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="container">
+
+        <!-- Dynamic Category Filter Buttons -->
+        <div class="filter-wrapper">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> All Loans</button>
+                <button class="tab-btn" data-filter="property"><i class="fa-solid fa-house"></i> Home</button>
+                <button class="tab-btn" data-filter="education"><i class="fa-solid fa-graduation-cap"></i> Education</button>
+                <button class="tab-btn" data-filter="auto"><i class="fa-solid fa-car"></i> Auto</button>
+                <button class="tab-btn" data-filter="business"><i class="fa-solid fa-briefcase"></i> Business</button>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <!-- Loans Offerings Grid -->
+            <section class="loans-grid">
+
+                <!-- 1. Home Loan Card (Navigates to homeloan.html) -->
+                <article class="loan-card" data-category="property">
+                    <div class="card-badge">Popular Choice</div>
+                    <div class="card-icon"><i class="fa-solid fa-house"></i></div>
+                    <h3>Dream Home Loan</h3>
+                    <div class="rate-info">
+                        <span class="rate-value">8.4%</span>
+                        <span class="rate-label">Per Year</span>
+                    </div>
+                    <p class="description">Buy or build your dream house with easy paperwork and low monthly payments.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Pay back in up to 30 years</li>
+                        <li><i class="fa-solid fa-check"></i> Loan amount up to ₹5 Crore</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="homeloan.html" class="details-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                        <button class="apply-btn" onclick="openModal('Dream Home Loan')">Apply</button>
+                    </div>
+                </article>
+
+                <!-- 2. Education Loan Card (Navigates to educationloan.html) -->
+                <article class="loan-card" data-category="education">
+                    <div class="card-badge">Student Offer</div>
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Student Education Loan</h3>
+                    <div class="rate-info">
+                        <span class="rate-value">7.9%</span>
+                        <span class="rate-label">Per Year</span>
+                    </div>
+                    <p class="description">Pay for college fees in India or abroad without worrying about payments while studying.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> No security needed up to ₹40 Lakhs</li>
+                        <li><i class="fa-solid fa-check"></i> Save money on tax</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="educationloan.html" class="details-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                        <button class="apply-btn" onclick="openModal('Student Education Loan')">Apply</button>
+                    </div>
+                </article>
+
+                <!-- 3. Auto Loan Card (Navigates to autoloan.html) -->
+                <article class="loan-card" data-category="auto">
+                    <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+                    <h3>Car & Vehicle Loan</h3>
+                    <div class="rate-info">
+                        <span class="rate-value">8.75%</span>
+                        <span class="rate-label">Per Year</span>
+                    </div>
+                    <p class="description">Drive home your new car or bike with fast approvals and simple monthly plans.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Get up to 100% car price funded</li>
+                        <li><i class="fa-solid fa-check"></i> Lower rates for Electric Cars</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="autoloan.html" class="details-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                        <button class="apply-btn" onclick="openModal('Car & Vehicle Loan')">Apply</button>
+                    </div>
+                </article>
+
+                <!-- 4. Business Loan Card (Navigates to businessloan.html) -->
+                <article class="loan-card" data-category="business">
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Small Business Loan</h3>
+                    <div class="rate-info">
+                        <span class="rate-value">11.2%</span>
+                        <span class="rate-label">Per Year</span>
+                    </div>
+                    <p class="description">Grow your shop or company, buy machinery, and keep daily business running smoothly.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Money up to ₹1 Crore</li>
+                        <li><i class="fa-solid fa-check"></i> Quick approval in 2 days</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="businessloan.html" class="details-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                        <button class="apply-btn" onclick="openModal('Small Business Loan')">Apply</button>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Sidebar Monthly Payment Check (Simple helper widget) -->
+            <aside class="sidebar-widget">
+                <div class="widget-header">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h4>Monthly Payment Check</h4>
+                </div>
+                <p class="widget-sub">Find out how much you pay every month</p>
+
+                <div class="widget-form">
+                    <div class="input-group">
+                        <label for="calcAmount">Loan Amount (₹)</label>
+                        <input type="number" id="calcAmount" value="500000" min="10000" step="10000">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="calcTenure">Loan Duration (Years)</label>
+                        <select id="calcTenure">
+                            <option value="1">1 Year</option>
+                            <option value="3" selected>3 Years</option>
+                            <option value="5">5 Years</option>
+                            <option value="7">7 Years</option>
+                        </select>
+                    </div>
+
+                    <div class="estimate-result">
+                        <span class="result-label">Estimated Monthly Payment</span>
+                        <span class="result-value" id="monthlyResult">₹17,222 / mo</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Application Form Popup -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-paper-plane"></i>
+                <h3 id="modalLoanTitle">Apply for Loan</h3>
+                <p>Fill in your details and our team will call you back.</p>
+            </div>
+            
+            <form id="loanForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Your Name</label>
+                    <input type="text" id="fullName" placeholder="Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="rahul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Apex Bank Loans Division. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to JS inside script.js folder -->
+    <script src="script.js/loans.js"></script>
+</body>
+</html>

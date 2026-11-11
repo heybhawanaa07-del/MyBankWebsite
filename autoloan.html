@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Loan - Apex Bank</title>
+    <link rel="stylesheet" href="style.css/loans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="loans.html" class="logo">
+                <i class="fa-solid fa-building-columns"></i>Apex<span>Bank</span> | Loans
+            </a>
+            <ul class="nav-links">
+                <li><a href="loans.html">All Loans</a></li>
+                <li><a href="homeloan.html">Home Loan</a></li>
+                <li><a href="educationloan.html">Education Loan</a></li>
+                <li><a href="autoloan.html" class="active">Auto Loan</a></li>
+                <li><a href="businessloan.html">Business Loan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="back-link">
+        <div class="container">
+            <a href="loans.html"><i class="fa-solid fa-arrow-left"></i> Back to Main Loans Page</a>
+        </div>
+    </div>
+
+    <header class="detail-hero auto-bg">
+        <div class="container">
+            <span class="hero-tag">Car & Bike</span>
+            <h1>Car & Vehicle Loan</h1>
+            <p>Buy a new or used vehicle with interest rates starting at 8.75% per year.</p>
+            <button class="apply-btn inline-btn" onclick="openModal('Car & Vehicle Loan')">Apply For Auto Loan</button>
+        </div>
+    </header>
+
+    <section class="container detail-content">
+        <div class="detail-grid">
+            <div class="info-box">
+                <h2>Drive Home Your Dream Car Today</h2>
+                <p>We pay up to 100% of your car's price. Enjoy instant paperless processing2 for new cars, used cars, and electric vehicles.</p>
+                <ul class="detail-list">
+                    <li><strong>Full Funding:</strong> We cover car cost, insurance, and road tax.</li>
+                    <li><strong>Electric Car Discount:</strong> Special discount on interest rates for EVs.</li>
+                    <li><strong>Flexible Duration:</strong> Pay back in 1 to 7 years.</li>
+                </ul>
+            </div>
+
+            <div class="info-box sidebar-box">
+                <h3>Checklist</h3>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-file"></i> Aadhaar Card / PAN Card</li>
+                    <li><i class="fa-solid fa-file"></i> Car price paper from dealer</li>
+                    <li><i class="fa-solid fa-file"></i> Salary slip or bank statement</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-car"></i>
+                <h3 id="modalLoanTitle">Apply for Auto Loan</h3>
+                <p>Fill details to check your car loan offer.</p>
+            </div>
+            
+            <form id="loanForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Your Name</label>
+                    <input type="text" id="fullName" placeholder="Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="rahul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="submit-btn">Apply Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Apex Bank. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js/loans.js"></script>
+</body>
+</html>
