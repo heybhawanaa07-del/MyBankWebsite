@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Finance Bank (UFB) | Personal & Digital Banking</title>
+    <!-- Tailwind CSS (for your exact Logo component utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ufb-navy': '#0a2540',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="ASTHApersonal.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-ticker">
+        <p><i class="fa-solid fa-shield-halved"></i> Zero-fee digital savings accounts & instant festive card approvals are now live.</p>
+    </div>
+
+    <!-- Sticky Header & Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <!-- EXACT USER LOGO -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-ufb-navy rounded-xl flex items-center justify-center text-white font-bold shadow-md">
+                        <i class="fa-solid fa-leaf text-base"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold tracking-tight text-ufb-navy leading-none block">UFB</span>
+                        <span class="block text-[9px] uppercase tracking-wider text-slate-500 font-semibold mt-0.5">Unified Finance Bank</span>
+                    </div>
+                </div>
+
+                <!-- Primary Links (All set to # as requested) -->
+                <nav class="primary-links">
+                    <a href="#" class="active">Personal</a>
+                    <a href="#">NRI</a>
+                    <a href="#">Business</a>
+                    <a href="#">Corporate</a>
+                </nav>
+            </div>
+
+            <div class="nav-right">
+                <nav class="secondary-links">
+                    <a href="#">Track Applications</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Help</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="#" class="icon-link" title="Support"><i class="fa-solid fa-headset"></i></a>
+                    <a href="#" class="icon-link" title="Notifications"><i class="fa-regular fa-bell"></i></a>
+                    <a href="#" class="btn-login"><i class="fa-solid fa-lock"></i> Login <i class="fa-solid fa-chevron-down text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Inspired by ICICI Split Banner + Quick Grid) -->
+    <section class="hero-section">
+        <div class="container hero-grid">
+            
+            <!-- Left Side: Search, Quick Actions & Offer Card -->
+            <div class="hero-left">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="heroSearch" placeholder="Search for Accounts, Cards, Loans, FD Rates...">
+                    <button type="button" class="mic-btn" title="Voice Search"><i class="fa-solid fa-microphone"></i></button>
+                </div>
+
+                <!-- 6 Quick Action Tiles -->
+                <div class="quick-tiles">
+                    <a href="#" class="q-tile">
+                        <span class="q-icon"><i class="fa-solid fa-piggy-bank"></i></span>
+                        <span>Accounts</span>
+                    </a>
+                    <a href="#" class="q-tile">
+                        <span class="q-icon"><i class="fa-regular fa-credit-card"></i></span>
+                        <span>Cards</span>
+                    </a>
+                    <a href="#" class="q-tile">
+                        <span class="q-icon"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                        <span>Loans</span>
+                    </a>
+                    <a href="#" class="q-tile">
+                        <span class="q-icon"><i class="fa-solid fa-umbrella"></i></span>
+                        <span>Insurance</span>
+                    </a>
+                    <a href="bankinvest.html" class="q-tile">
+                        <span class="q-icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>Investments</span>
+                    </a>
+                    <a href="#fd-calculator" class="q-tile highlight-tile">
+                        <span class="q-icon"><i class="fa-solid fa-percent"></i></span>
+                        <span>FD Calculator</span>
+                    </a>
+                </div>
+
+                <!-- Offers For You Mini-Carousel -->
+                <div class="offers-wrapper">
+                    <span class="offers-label">OFFERS FOR YOU</span>
+                    <div class="offer-card" id="offerCard">
+                        <div class="offer-text">
+                            <span class="badge-new">INSTANT APPROVAL</span>
+                            <h4 id="offerTitle">Credit Card for you</h4>
+                            <p id="offerDesc">Get pre-approved UFB Credit Cards with zero joining fee & lounge access.</p>
+                            <div class="offer-links">
+                                <a href="#cards-section">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="#">Details</a>
+                            </div>
+                        </div>
+                        <div class="offer-visual">
+                            <div class="mini-card-art">
+                                <i class="fa-solid fa-leaf"></i>
+                                <span>UFB ELITE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-controls">
+                        <button id="prevOffer" aria-label="Previous Offer"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button id="nextOffer" aria-label="Next Offer"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Promotional Hero Banner -->
+            <div class="hero-right">
+                <div class="promo-banner">
+                    <div class="promo-perks">
+                        <div class="perk-pill"><i class="fa-solid fa-plane-departure"></i> Airport Lounge Access</div>
+                        <div class="perk-pill"><i class="fa-solid fa-film"></i> Buy 1 Get 1 Movie Tickets</div>
+                    </div>
+                    <div class="promo-content">
+                        <span class="promo-tag">LIMITED TIME PRIVILEGE</span>
+                        <h1>Smart banking<br><span>just got better.</span></h1>
+                        <p>Experience UFB Emerald & Sapphire Cards with 5X rewards on travel, dining, and online shopping.</p>
+                        <div class="promo-cta-group">
+                            <a href="#cards-section" class="btn-primary">Check Eligibility</a>
+                            <a href="#" class="btn-ghost">Explore Rewards</a>
+                        </div>
+                    </div>
+                    <!-- Decorative Abstract Card Graphic -->
+                    <div class="floating-card-mockup">
+                        <div class="card-chip"></div>
+                        <div class="card-brand"><i class="fa-solid fa-leaf"></i> UFB INFINITE</div>
+                        <div class="card-num">•••• •••• •••• 8842</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Category Tab Strip (Overlapping Hero Bottom) -->
+        <div class="container">
+            <div class="category-strip">
+                <button class="cat-tab active" data-tab="accounts"><i class="fa-solid fa-wallet"></i> Digital Accounts</button>
+                <button class="cat-tab" data-tab="cards"><i class="fa-solid fa-credit-card"></i> Cards & Offers</button>
+                <button class="cat-tab" data-tab="loans"><i class="fa-solid fa-house"></i> Instant Loans</button>
+                <button class="cat-tab" data-tab="wealth"><i class="fa-solid fa-seedling"></i> Wealth & Deposits</button>
+                <button class="cat-tab" data-tab="forex"><i class="fa-solid fa-globe"></i> Global & Forex</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Fixed Deposit Calculator (Simplified & Clean) -->
+    <section id="fd-calculator" class="section-spacing">
+        <div class="container">
+            <div class="calc-card">
+                <div class="calc-header">
+                    <div>
+                        <h2>Fixed Deposit Calculator</h2>
+                        <p>Calculate guaranteed returns with UFB high-yield term deposits</p>
+                    </div>
+                    <div class="customer-toggle">
+                        <button type="button" class="toggle-btn active" data-rate-bonus="0">Regular Citizen</button>
+                        <button type="button" class="toggle-btn" data-rate-bonus="0.50">Senior Citizen (+0.50%)</button>
+                    </div>
+                </div>
+
+                <div class="calc-body">
+                    <!-- Controls -->
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="depositAmount">Investment Amount</label>
+                                <div class="amount-display">₹ <input type="number" id="depositAmountInput" value="500000" min="10000" max="10000000" step="5000"></div>
+                            </div>
+                            <input type="range" id="depositSlider" min="10000" max="5000000" step="10000" value="500000">
+                            <div class="range-marks">
+                                <span>₹10K</span>
+                                <span>₹10L</span>
+                                <span>₹25L</span>
+                                <span>₹50L</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Select Tenure & Interest Rate</label>
+                            <div class="tenure-pills" id="tenureOptions">
+                                <button type="button" class="tenure-pill" data-years="1" data-rate="6.75">
+                                    <span class="rate">6.75%</span>
+                                    <span class="period">1 Year</span>
+                                </button>
+                                <button type="button" class="tenure-pill active" data-years="2.5" data-rate="7.35">
+                                    <span class="badge-pop">POPULAR</span>
+                                    <span class="rate">7.35%</span>
+                                    <span class="period">2 Years 6 Mos</span>
+                                </button>
+                                <button type="button" class="tenure-pill" data-years="5" data-rate="7.10">
+                                    <span class="rate">7.10%</span>
+                                    <span class="period">5 Years (Tax Saver)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Panel (UFB Navy/Cyan Gradient) -->
+                    <div class="calc-result">
+                        <span class="res-label">Estimated Maturity Amount</span>
+                        <div class="res-total" id="maturityValue">₹6,00,482</div>
+
+                        <div class="res-breakdown">
+                            <div>
+                                <span>Principal Invested</span>
+                                <strong id="principalDisplay">₹5,00,000</strong>
+                            </div>
+                            <div>
+                                <span>Total Interest Earned</span>
+                                <strong class="text-cyan-300" id="interestDisplay">+ ₹1,00,482</strong>
+                            </div>
+                            <div>
+                                <span>Effective Interest Rate</span>
+                                <strong id="rateDisplay">7.35% p.a.</strong>
+                            </div>
+                            <div>
+                                <span>Maturity Date</span>
+                                <strong id="maturityDateDisplay">May 2029</strong>
+                            </div>
+                        </div>
+
+                        <div class="res-actions">
+                            <a href="#" class="btn-cyan-full">Open Fixed Deposit Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grow Your Money Quick Accordion -->
+    <section class="section-spacing pt-0">
+        <div class="container">
+            <div class="grow-box">
+                <div class="grow-header">
+                    <h3>Grow Your Money</h3>
+                    <p>Tailored wealth solutions for every financial milestone</p>
+                </div>
+                <div class="grow-grid">
+                    <a href="#" class="grow-item">
+                        <span><i class="fa-solid fa-vault"></i> Fixed & Recurring Deposits</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="grow-item">
+                        <span><i class="fa-solid fa-arrow-trend-up"></i> Mutual Funds & SIPs</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="grow-item">
+                        <span><i class="fa-solid fa-building-columns"></i> Demat & Direct Equity</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="grow-item">
+                        <span><i class="fa-solid fa-shield-heart"></i> Retirement & NPS Plans</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Your Credit Card Section -->
+    <section id="cards-section" class="section-spacing">
+        <div class="container">
+            <div class="section-title-row">
+                <div>
+                    <h2>Choose your Credit Card</h2>
+                    <p>Designed for lifestyle privileges, travel rewards, and everyday cashback</p>
+                </div>
+                <a href="#" class="view-all-link">Compare All Cards <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="cc-card">
+                    <div class="cc-visual card-sapphire">
+                        <div class="cc-top">
+                            <span><i class="fa-solid fa-leaf"></i> UFB</span>
+                            <i class="fa-solid fa-wifi rotate-90"></i>
+                        </div>
+                        <div class="cc-chip"></div>
+                        <div class="cc-bottom">
+                            <span>SAPPHIRE</span>
+                            <span>VISA INFINITE</span>
+                        </div>
+                    </div>
+                    <div class="cc-body">
+                        <div class="cc-name-row">
+                            <h3>UFB Sapphire</h3>
+                            <span class="tag-pill">Best for Travel</span>
+                        </div>
+                        <p class="cc-subtitle">Premium lifestyle & global lounge privileges</p>
+                        <ul class="cc-perks">
+                            <li><i class="fa-solid fa-check"></i> Complimentary domestic & international lounges</li>
+                            <li><i class="fa-solid fa-check"></i> 2X rewards on international & dining spends</li>
+                        </ul>
+                        <div class="cc-footer">
+                            <a href="#" class="btn-apply">Apply Now</a>
+                            <a href="#" class="btn-details">Know More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="cc-card featured-cc">
+                    <span class="ribbon">MOST POPULAR</span>
+                    <div class="cc-visual card-emerald">
+                        <div class="cc-top">
+                            <span><i class="fa-solid fa-leaf"></i> UFB</span>
+                            <i class="fa-solid fa-wifi rotate-90"></i>
+                        </div>
+                        <div class="cc-chip"></div>
+                        <div class="cc-bottom">
+                            <span>EMERALD</span>
+                            <span>MASTERCARD WORLD</span>
+                        </div>
+                    </div>
+                    <div class="cc-body">
+                        <div class="cc-name-row">
+                            <h3>UFB Emerald</h3>
+                            <span class="tag-pill">High-End Perks</span>
+                        </div>
+                        <p class="cc-subtitle">Curated rewards, golf access & zero forex markup</p>
+                        <ul class="cc-perks">
+                            <li><i class="fa-solid fa-check"></i> Buy 1 Get 1 free on movie & event tickets</li>
+                            <li><i class="fa-solid fa-check"></i> Zero fuel surcharge across all stations</li>
+                        </ul>
+                        <div class="cc-footer">
+                            <a href="#" class="btn-apply">Apply Now</a>
+                            <a href="#" class="btn-details">Know More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="cc-card">
+                    <div class="cc-visual card-coral">
+                        <div class="cc-top">
+                            <span><i class="fa-solid fa-leaf"></i> UFB</span>
+                            <i class="fa-solid fa-wifi rotate-90"></i>
+                        </div>
+                        <div class="cc-chip"></div>
+                        <div class="cc-bottom">
+                            <span>CORAL</span>
+                            <span>RUPAY SELECT</span>
+                        </div>
+                    </div>
+                    <div class="cc-body">
+                        <div class="cc-name-row">
+                            <h3>UFB Coral</h3>
+                            <span class="tag-pill">Zero Joining Fee</span>
+                        </div>
+                        <p class="cc-subtitle">Everyday rewards & instant UPI credit payments</p>
+                        <ul class="cc-perks">
+                            <li><i class="fa-solid fa-check"></i> Link directly to UPI for scan & pay rewards</li>
+                            <li><i class="fa-solid fa-check"></i> Up to 15% off at 3,000+ partner restaurants</li>
+                        </ul>
+                        <div class="cc-footer">
+                            <a href="#" class="btn-apply">Apply Now</a>
+                            <a href="#" class="btn-details">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seamless Mobile Banking Banner -->
+    <section class="mobile-app-section">
+        <div class="container mobile-grid">
+            <div class="mobile-text">
+                <span class="app-badge">UFB MOBILE 2.0</span>
+                <h2>Seamless<br>mobile banking</h2>
+                <p>Manage accounts, transfer funds via UPI, invest in FDs, and lock/unlock cards in one tap. Scan the QR code to download on iOS & Android.</p>
+                <div class="store-badges">
+                    <a href="#" class="store-btn"><i class="fa-brands fa-apple"></i> App Store</a>
+                    <a href="#" class="store-btn"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                </div>
+            </div>
+            <div class="qr-box">
+                <div class="qr-frame">
+                    <i class="fa-solid fa-qrcode"></i>
+                </div>
+                <span>Scan to Download UFB App</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Enterprise Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-contact">
+                    <span class="footer-label">24x7 CUSTOMER CARE</span>
+                    <div class="phone-num"><i class="fa-solid fa-phone-volume"></i> 1800 1080 999</div>
+                    <p class="text-xs text-slate-400 mt-2">Unified Finance Bank Tower, Financial District, Mumbai 400051</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div>
+                        <h4>Popular Products</h4>
+                        <ul>
+                            <li><a href="#">Savings Account</a></li>
+                            <li><a href="#">Credit Cards</a></li>
+                            <li><a href="#">Home Loans</a></li>
+                            <li><a href="#">Fixed Deposits</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Calculators & Tools</h4>
+                        <ul>
+                            <li><a href="#fd-calculator">FD Calculator</a></li>
+                            <li><a href="#">Home Loan EMI</a></li>
+                            <li><a href="#">SIP Returns</a></li>
+                            <li><a href="#">IFSC Code Finder</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Regulatory & Security</h4>
+                        <ul>
+                            <li><a href="#">Safe Banking Tips</a></li>
+                            <li><a href="#">Report Unauthorized Txn</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Unified Finance Bank Ltd. All rights reserved.</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="ASTHApersonal.js"></script>
+</body>
+</html>
