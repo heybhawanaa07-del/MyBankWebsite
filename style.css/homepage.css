@@ -409,3 +409,699 @@ body {
 .text-center {
     text-align: center;
 }
+
+
+
+
+
+
+/* ==========================================
+   APEX BANK - PREMIUM HOMEPAGE ENHANCEMENTS
+   Add this code at the END of homepage.css
+========================================== */
+
+
+/* 1. GENERAL STYLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--bg-light);
+}
+
+::selection {
+    background: var(--smart-blue);
+    color: white;
+}
+
+
+/* 2. TOP BAR */
+
+.top-bar {
+    background: linear-gradient(
+        90deg,
+        var(--prussian-blue),
+        var(--oxford-navy)
+    );
+    color: white;
+    padding: 9px 0;
+    font-size: 13px;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: #70BDFF;
+}
+
+
+/* 3. MAIN NAVIGATION HEADER */
+
+.main-header {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 18px rgba(0, 35, 75, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 14px 0;
+    backdrop-filter: blur(12px);
+    transition: box-shadow 0.3s ease;
+}
+
+.main-header:hover {
+    box-shadow: 0 5px 22px rgba(0, 35, 75, 0.12);
+}
+
+
+/* LOGO */
+
+.logo-container {
+    gap: 12px;
+}
+
+.logo-icon {
+    color: var(--smart-blue);
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--prussian-blue);
+}
+
+.logo-text span {
+    color: var(--smart-blue);
+}
+
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    background: var(--smart-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--smart-blue);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* SEARCH BOX */
+
+.search-box {
+    border: 1px solid #D6DFEA;
+    border-radius: 30px;
+    padding: 9px 15px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: var(--smart-blue);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.10);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+/* INTERNET BANKING BUTTON */
+
+.login-btn {
+    background: var(--prussian-blue);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: var(--smart-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.25);
+}
+
+
+/* 4. HERO SECTION */
+
+.hero-section {
+    background: linear-gradient(
+        115deg,
+        #0A2540 0%,
+        #123E78 55%,
+        #1E3A8A 100%
+    );
+
+    color: white;
+    padding: 75px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background circles */
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    top: -170px;
+    right: 5%;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.035);
+    bottom: -130px;
+    left: 35%;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: clamp(30px, 3.2vw, 42px);
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 18px 0;
+    letter-spacing: -0.8px;
+}
+
+.hero-content p {
+    color: #E2EAF6;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+}
+
+
+/* HERO BUTTONS */
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 7px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--smart-blue);
+    color: white;
+    border: 1px solid var(--smart-blue);
+}
+
+.btn-primary:hover {
+    background: #1685E5;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,102,204,0.35);
+}
+
+.btn-secondary {
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--prussian-blue);
+    transform: translateY(-4px);
+}
+
+
+/* 5. QUICK SERVICES PANEL */
+
+.quick-services-card {
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quick-services-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.23);
+}
+
+.quick-services-card h3 {
+    color: var(--prussian-blue);
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.quick-grid {
+    gap: 14px;
+}
+
+.quick-item {
+    background: #F2F6FB;
+    border-radius: 12px;
+    padding: 22px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-item i {
+    color: var(--steel-blue);
+    font-size: 25px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.quick-item:hover {
+    background: #E3F0FF;
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px rgba(0,102,204,0.12);
+}
+
+.quick-item:hover i {
+    transform: scale(1.2);
+    color: var(--smart-blue);
+}
+
+
+/* 6. BANKING SERVICES SECTION */
+
+.services-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.section-title {
+    color: var(--prussian-blue);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: var(--smart-blue);
+    border-radius: 10px;
+    margin: 12px auto 0;
+}
+
+
+/* 7. SERVICE CARDS */
+
+.services-grid {
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 13px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,35,75,0.035);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-9px);
+    border-color: #8FC8FF;
+    box-shadow: 0 15px 35px rgba(0,65,130,0.12);
+}
+
+
+/* CARD ICONS */
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: #EDF5FF;
+    color: var(--smart-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 23px;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .card-icon {
+    background: var(--smart-blue);
+    color: white;
+    transform: scale(1.08) rotate(-4deg);
+}
+
+
+/* CARD HEADINGS */
+
+.service-card h3 {
+    color: var(--prussian-blue);
+    font-size: 19px;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: var(--smart-blue);
+}
+
+.service-card p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.service-card ul {
+    padding-left: 18px;
+    margin: 15px 0;
+}
+
+.service-card li {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+
+/* CARD LINKS */
+
+.card-link {
+    display: inline-block;
+    color: var(--smart-blue);
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--prussian-blue);
+    transform: translateX(6px);
+}
+
+
+/* 8. FOOTER */
+
+.footer {
+    background: linear-gradient(
+        120deg,
+        #0A2540,
+        #003366
+    );
+    color: white;
+    padding-top: 55px;
+    margin-top: 0;
+}
+
+.footer-grid {
+    gap: 35px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: #65B5F5;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.footer-col a {
+    display: block;
+    color: #B8C9DC;
+    text-decoration: none;
+    margin-bottom: 13px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-col p {
+    color: #D2DEEB;
+    line-height: 1.8;
+}
+
+.helpline-box {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 9px;
+    margin-top: 15px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.helpline-box strong {
+    color: #1685E5;
+    font-size: 19px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 20px 0;
+    color: #AFC2D8;
+    font-size: 13px;
+}
+
+
+/* 9. SMOOTH ANIMATIONS */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s ease both;
+}
+
+.quick-services-card {
+    animation: fadeInUp 1s ease both;
+}
+
+
+/* 10. RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .hero-section {
+        padding: 55px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .main-header {
+        position: relative;
+    }
+
+    .main-header .container {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+
+    .hero-section {
+        padding: 45px 0;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo-text {
+        font-size: 21px;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* 11. ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #38A5FF;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*jbhgccbvzVnzghhchcdbb  */  
+
+
+/* Make NRI option more noticeable in top bar */
+
+.segment-selector .segment-btn {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 14px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* NRI button styling */
+.segment-selector .segment-btn:nth-child(2) {
+    color: #FFFFFF;
+    font-weight: 700;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+}
+
+/* NRI hover effect */
+.segment-selector .segment-btn:nth-child(2):hover {
+    background: #0866CC;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Keep active button highlighted */
+.segment-selector .segment-btn.active {
+    background: #0866CC;
+    color: #FFFFFF;
+    opacity: 1;
+}
