@@ -1,0 +1,579 @@
+/* APEX Bank - shared stylesheet. Used by all four pages. */
+
+/* ===== COLORS - change these and the whole site updates ===== */
+:root {
+    --navy: #14183a;
+    --accent: #e4572e;
+    --bg: #f6f7fb;
+    --text: #2b2f45;
+    --muted: #6b7089;
+    --white: #fff;
+}
+
+/* ===== RESET - removes the browser's default spacing ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI',Arial,sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== HEADER AND NAVIGATION ===== */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 5%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--navy);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 22px;
+}
+
+.main-navigation a {
+    font-weight: 500;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.main-navigation a:hover,.main-navigation a.active {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* ===== SUB-NAVIGATION (the dark bar under the header) ===== */
+.subnav {
+    background: var(--navy);
+    display: flex;
+    gap: 6px;
+    padding: 0 5%;
+    overflow-x: auto;
+}
+
+.subnav a {
+    color: #cfd3f5;
+    padding: 12px 16px;
+    white-space: nowrap;
+    font-size: .95rem;
+}
+
+.subnav a:hover,.subnav a.active {
+    color: #fff;
+    box-shadow: inset 0 -3px var(--accent);
+}
+
+/* ===== GENERAL SECTIONS AND HEADINGS ===== */
+section {
+    padding: 60px 5%;
+}
+
+.section-tag {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: .8rem;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin: 6px 0;
+}
+
+/* ===== HERO BANNER (top of cards.html) ===== */
+.cards-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(120deg,#14183a,#2d2f77);
+    color: #fff;
+}
+
+.cards-hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.15;
+    margin: 10px 0 16px;
+}
+
+.cards-hero h1 span {
+    color: #ff9b73;
+    display: block;
+}
+
+.cards-hero p {
+    color: #d6d9f5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+/* ===== BUTTONS ===== */
+.primary-button,.secondary-button,.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: 2px solid var(--accent);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.primary-button,.btn {
+    background: var(--accent);
+    color: #fff;
+}
+
+.secondary-button {
+    color: #fff;
+    border-color: #fff;
+}
+
+.primary-button:hover,.btn:hover {
+    background: #c8431e;
+}
+
+.secondary-button:hover {
+    background: #fff;
+    color: var(--navy);
+}
+
+/* ===== FLOATING CARDS IN THE HERO ===== */
+.hero-cards {
+    position: relative;
+    height: 260px;
+}
+
+.hero-cards .card-visual {
+    position: absolute;
+    width: 300px;
+}
+
+.hero-cards .card-visual:nth-child(1) {
+    left: 0;
+    top: 30px;
+    transform: rotate(-8deg);
+}
+
+.hero-cards .card-visual:nth-child(2) {
+    left: 90px;
+    top: 0;
+    transform: rotate(4deg);
+}
+
+.hero-cards .card-visual:nth-child(3) {
+    left: 170px;
+    top: 60px;
+    transform: rotate(12deg);
+}
+
+/* ===== CARD IMAGE (the gradient credit card drawing) ===== */
+.card-visual {
+    aspect-ratio: 1.586;
+    border-radius: 16px;
+    padding: 18px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.card-visual .chip {
+    width: 38px;
+    height: 28px;
+    border-radius: 6px;
+    background: linear-gradient(135deg,#f5d77a,#c9a032);
+}
+
+.card-visual b {
+    font-size: 1.05rem;
+}
+
+.card-visual small {
+    opacity: .8;
+    letter-spacing: 2px;
+}
+
+/* ===== CARD GRIDS AND TILES ===== */
+.category-container,.cards-grid,.advantages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 24px;
+}
+
+.category-card,.bank-card,.advantage-card,.featured-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(20,24,58,.07);
+    transition: .2s;
+}
+
+.category-card:hover,.bank-card:hover,.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(20,24,58,.15);
+}
+
+.category-card .ico {
+    font-size: 2.2rem;
+}
+
+.category-card h3,.advantage-card h3 {
+    margin: 8px 0 4px;
+    color: var(--navy);
+}
+
+.advantage-card {
+    text-align: center;
+}
+
+.advantage-card .ico {
+    font-size: 2rem;
+}
+
+.bank-card h3,.featured-card h3 {
+    margin: 16px 0 6px;
+    color: var(--navy);
+}
+
+.bank-card p {
+    color: var(--muted);
+    font-size: .93rem;
+    margin-bottom: 12px;
+}
+
+.know-more,.view-all {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.know-more:hover,.view-all:hover {
+    text-decoration: underline;
+}
+
+/* ===== FEATURED CARDS ===== */
+.featured-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 26px;
+}
+
+.featured-card ul {
+    margin: 10px 0 14px;
+    font-size: .92rem;
+    color: var(--muted);
+}
+
+.featured-card li:before {
+    content: "✓ ";
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.card-label {
+    display: inline-block;
+    background: #ffe9e1;
+    color: var(--accent);
+    font-size: .72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 14px;
+}
+
+/* ===== CATEGORY HEADINGS AND FILTERS ===== */
+.category-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.alt {
+    background: var(--white);
+}
+
+/* ===== FAQ ===== */
+.faq-container {
+    max-width: 760px;
+    margin: auto;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.faq-item p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+/* ===== CALL-TO-ACTION BANNER ===== */
+.cards-cta {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+}
+
+.cards-cta h2 {
+    color: #fff;
+}
+
+.cards-cta p {
+    color: #cfd3f5;
+    margin: 8px 0 22px;
+}
+
+/* ===== INNER PAGE TITLE BAR ===== */
+.page-title {
+    background: linear-gradient(120deg,#14183a,#2d2f77);
+    color: #fff;
+    padding: 46px 5%;
+}
+
+.page-title h1 {
+    font-size: 2.2rem;
+}
+
+.page-title p {
+    color: #d6d9f5;
+}
+
+.breadcrumb {
+    font-size: .85rem;
+    color: #b9bde6;
+    margin-bottom: 8px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+}
+
+.chip-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #cfd3e6;
+    background: #fff;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+.chip-btn.on {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+}
+
+/* ===== CARD DETAILS PAGE ===== */
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.detail .card-visual {
+    font-size: 1.2rem;
+    max-width: 420px;
+}
+
+.specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.specs div {
+    background: var(--white);
+    padding: 14px;
+    border-radius: 12px;
+}
+
+.specs span {
+    display: block;
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(20,24,58,.07);
+}
+
+/* ===== COMPARISON TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+th,td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eceef6;
+}
+
+th {
+    background: var(--navy);
+    color: #fff;
+}
+
+tr: hover td {
+    background: #fafbff;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0d102b;
+    color: #aab0d8;
+    padding: 40px 5% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 24px;
+}
+
+.footer h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer li {
+    margin: 5px 0;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 28px;
+    font-size: .85rem;
+}
+
+/* ===== MOBILE LAYOUT (screens narrower than 860px) ===== */
+@media(max-width:860px) {
+    .menu-toggle {
+        display: block;
+    }
+    .main-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 10px 5%;
+        box-shadow: 0 8px 12px rgba(0,0,0,.08);
+    }
+    .main-navigation.open {
+        display: block;
+    }
+    .main-navigation ul {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .header-actions {
+        display: none;
+    }
+    .cards-hero,.detail {
+        grid-template-columns: 1fr;
+    }
+    .cards-hero h1 {
+        font-size: 2.1rem;
+    }
+    .hero-cards {
+        height: 230px;
+    }
+    .hero-cards .card-visual {
+        width: 230px;
+    }
+    .hero-cards .card-visual:nth-child(2) {
+        left: 70px;
+    }
+    .hero-cards .card-visual:nth-child(3) {
+        left: 130px;
+    }
+}

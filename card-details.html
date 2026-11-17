@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Details | APEX Bank</title>
+  <link rel="stylesheet" href="style.css\cards.css">
+  <script src="script.js\cards.js" defer></script>
+</head>
+<body data-page="details">
+  <div id="site-header"></div>
+  <main>
+    <div class="page-title">
+      <p class="breadcrumb"><a href="cards.html">Cards</a> / Card Details</p>
+      <h1>Card Details &amp; Comparison</h1>
+      <p>Explore a card in detail and compare it with others.</p>
+    </div>
+    <section><div class="detail" id="detail"></div></section>
+    <section class="alt" id="compare-cards">
+      <div class="section-heading">
+        <p class="section-tag">MAKE THE RIGHT CHOICE</p>
+        <h2>Compare Our Cards</h2>
+        <p>Show cards of type: <select id="compare-type" class="chip-btn">
+          <option value="all">All</option><option value="credit">Credit</option><option value="debit">Debit</option>
+          <option value="forex">Forex</option><option value="prepaid">Prepaid</option></select></p>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Card</th><th>Type</th><th>Annual Fee</th><th>Rewards</th><th>Lounge Access</th></tr></thead>
+        <tbody id="compare-body"></tbody></table></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
