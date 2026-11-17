@@ -1,7 +1,7 @@
-// Comment: Script initialized for Apex Horizon Bank Homepage
+// Comment: Script initialized for Unified finance Horizon Bank Homepage
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Apex Bank Homepage script successfully loaded.");
+    console.log("Unified finance Bank Homepage script successfully loaded.");
 
     // Smooth Scrolling for Navigation Links
     const navLinks = document.querySelectorAll('a[href^="#"]');

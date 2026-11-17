@@ -1,5 +1,5 @@
 // =====================================================================
-// APEX Bank - script.js
+// Unified finance Bank - script.js
 // This one file does three jobs:
 //   1. Stores the card information (the CARDS list just below)
 //   2. Builds the header and footer shared by every page
@@ -16,7 +16,7 @@ const CARDS = [
   {
     id: 'infinite',                  // used in the link: card-details.html?id=infinite
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Infinite',
+    name: 'unified finance Infinite',
     tag: 'Premium',                 // small label shown on the card
     color1: '#14183a',            // card gradient: start color
     color2: '#6c4bd1',            // card gradient: end color
@@ -33,7 +33,7 @@ const CARDS = [
   {
     id: 'platinum',                  // used in the link: card-details.html?id=platinum
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Platinum',
+    name: 'Unified finance Platinum',
     tag: 'Popular',                 // small label shown on the card
     color1: '#3a3f58',            // card gradient: start color
     color2: '#9aa3c7',            // card gradient: end color
@@ -50,7 +50,7 @@ const CARDS = [
   {
     id: 'cashback',                  // used in the link: card-details.html?id=cashback
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Cashback',
+    name: 'Unified finance Cashback',
     tag: 'Cashback',                 // small label shown on the card
     color1: '#0f5e4d',            // card gradient: start color
     color2: '#34b58f',            // card gradient: end color
@@ -67,7 +67,7 @@ const CARDS = [
   {
     id: 'signature',                  // used in the link: card-details.html?id=signature
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Signature',
+    name: 'Unified finance Signature',
     tag: 'Premium',                 // small label shown on the card
     color1: '#5a1a3a',            // card gradient: start color
     color2: '#d4577f',            // card gradient: end color
@@ -84,7 +84,7 @@ const CARDS = [
   {
     id: 'rewards',                  // used in the link: card-details.html?id=rewards
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Rewards',
+    name: 'Unified finance Rewards',
     tag: 'Rewards',                 // small label shown on the card
     color1: '#7a3b00',            // card gradient: start color
     color2: '#f0a030',            // card gradient: end color
@@ -101,7 +101,7 @@ const CARDS = [
   {
     id: 'shopping',                  // used in the link: card-details.html?id=shopping
     type: 'credit',                // credit, debit, forex or prepaid
-    name: 'APEX Shopping',
+    name: 'Unified finance Shopping',
     tag: 'Shopping',                 // small label shown on the card
     color1: '#1b3a8a',            // card gradient: start color
     color2: '#4f8cff',            // card gradient: end color
@@ -120,7 +120,7 @@ const CARDS = [
   {
     id: 'classic-debit',                  // used in the link: card-details.html?id=classic-debit
     type: 'debit',                // credit, debit, forex or prepaid
-    name: 'APEX Classic Debit',
+    name: 'Unified finance Classic Debit',
     tag: 'Everyday',                 // small label shown on the card
     color1: '#2a2f4a',            // card gradient: start color
     color2: '#5d6590',            // card gradient: end color
@@ -137,7 +137,7 @@ const CARDS = [
   {
     id: 'platinum-debit',                  // used in the link: card-details.html?id=platinum-debit
     type: 'debit',                // credit, debit, forex or prepaid
-    name: 'APEX Platinum Debit',
+    name: 'Unified finance Platinum Debit',
     tag: 'Enhanced',                 // small label shown on the card
     color1: '#4a4a52',            // card gradient: start color
     color2: '#a8a8b8',            // card gradient: end color
@@ -154,7 +154,7 @@ const CARDS = [
   {
     id: 'world-debit',                  // used in the link: card-details.html?id=world-debit
     type: 'debit',                // credit, debit, forex or prepaid
-    name: 'APEX World Debit',
+    name: 'Unified finance World Debit',
     tag: 'Premium',                 // small label shown on the card
     color1: '#12384a',            // card gradient: start color
     color2: '#2fa4c9',            // card gradient: end color
@@ -173,7 +173,7 @@ const CARDS = [
   {
     id: 'travel-forex',                  // used in the link: card-details.html?id=travel-forex
     type: 'forex',                // credit, debit, forex or prepaid
-    name: 'APEX Travel Forex',
+    name: 'Unified finance Travel Forex',
     tag: 'Travel',                 // small label shown on the card
     color1: '#0b3d5c',            // card gradient: start color
     color2: '#3bb3e0',            // card gradient: end color
@@ -190,7 +190,7 @@ const CARDS = [
   {
     id: 'global-forex',                  // used in the link: card-details.html?id=global-forex
     type: 'forex',                // credit, debit, forex or prepaid
-    name: 'APEX Global Forex',
+    name: 'Unified finance Global Forex',
     tag: 'Multi-currency',                 // small label shown on the card
     color1: '#3b1f6b',            // card gradient: start color
     color2: '#a070e8',            // card gradient: end color
@@ -209,7 +209,7 @@ const CARDS = [
   {
     id: 'gift-card',                  // used in the link: card-details.html?id=gift-card
     type: 'prepaid',                // credit, debit, forex or prepaid
-    name: 'APEX Gift Card',
+    name: 'Unified finance Gift Card',
     tag: 'Gifting',                 // small label shown on the card
     color1: '#8a1f3d',            // card gradient: start color
     color2: '#f06a8a',            // card gradient: end color
@@ -226,7 +226,7 @@ const CARDS = [
   {
     id: 'smart-card',                  // used in the link: card-details.html?id=smart-card
     type: 'prepaid',                // credit, debit, forex or prepaid
-    name: 'APEX Smart Card',
+    name: 'Unified finance Smart Card',
     tag: 'Smart',                 // small label shown on the card
     color1: '#1f4d3a',            // card gradient: start color
     color2: '#5fc79a',            // card gradient: end color
@@ -291,7 +291,7 @@ function buildLayout() {
   $('#site-header').innerHTML = `
     <header class="main-header">
       <div class="logo">
-        <a href="index.html"><h1>APEX <span>BANK</span></h1></a>
+        <a href="index.html"><h1>Unified finance <span>BANK</span></h1></a>
       </div>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
@@ -321,7 +321,7 @@ function buildLayout() {
     <footer class="footer">
       <div class="footer-grid">
         <div>
-          <h4>APEX BANK</h4>
+          <h4>Unified finance BANK</h4>
           <p>Banking made simple.</p>
         </div>
         <div>
@@ -341,7 +341,7 @@ function buildLayout() {
           </ul>
         </div>
       </div>
-      <p class="copy">© ${new Date().getFullYear()} APEX Bank. Demo website - card details are sample data.</p>
+      <p class="copy">© ${new Date().getFullYear()} Unified finance Bank. Demo website - card details are sample data.</p>
     </footer>
   `;
 
@@ -508,7 +508,7 @@ function setupDetailsPage() {
   const id = new URLSearchParams(location.search).get('id');
   const card = findCard(id) || CARDS[0];
 
-  document.title = card.name + ' | APEX Bank';
+  document.title = card.name + ' | Unified finance Bank';
 
   // List of features
   let featureItems = '';
